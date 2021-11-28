@@ -371,3 +371,191 @@ footer {
   font-weight: bold;
 }
 /* #endregion */
+
+/* #region music player page */
+
+/* #endregion */
+.music-player-main {
+  margin: 50px 2% 0 2%;
+}
+.music-player-container {
+  width: 95%;
+  border-radius: 15px;
+  height: 650px;
+}
+.music-player-container .player {
+  height: fit-content;
+  display: flex;
+  height: 88%;
+}
+.player-side-menu-container {
+  display: flex;
+  flex-direction: column;
+  background-color: #232323;
+  height: 100%;
+  width: 30%;
+  border-radius: 0 15px 0 0;
+}
+.player-tabs {
+  background-color: #252525;
+  width: 100%;
+  border-radius: 0 15px 0 0;
+}
+.player-tabs div {
+  padding: 10px 0;
+  width: 50%;
+  font-size: 18px;
+  color: var(--gray-light);
+  transition: 0.3s all;
+}
+.player-tabs div:first-child {
+  border-radius: 0 15px 0 0;
+}
+.player-tabs div:hover {
+  background-color: var(--gray);
+  color: white !important;
+}
+.player-tabs .active {
+  color: var(--light-red) !important;
+}
+.player-queue {
+  padding: 15px;
+  overflow-y: scroll;
+}
+.player-queue-song {
+  display: flex;
+  margin-top: 15px;
+  transition: background-color 0.3s;
+  padding: 10px 0;
+}
+.player-queue-song:hover {
+  background-color: #1e1e1e;
+}
+.player-queue-song img {
+  width: 64px;
+  height: 64px;
+}
+.player-queue-song div {
+  display: flex;
+  flex-direction: column;
+  padding: 15px 15px 0px 0;
+  width: calc(100% - 128px);
+}
+.player-queue-song div .song-name {
+  font-size: 16px;
+  color: var(--cream);
+}
+.player-queue-song div .artist-name span {
+  display: flex;
+  font-size: 14px;
+}
+.player-queue-song div .artist-name a {
+  color: var(--gray-light);
+  transition: 0.3s color;
+  width: fit-content;
+}
+.player-queue-song div .artist-name a:hover {
+  color: #b4b4b4;
+}
+.selected {
+  background-color: #1e1e1e;
+}
+.music-cover-container {
+  width: 70%;
+  height: 100%;
+  background-color: #222222;
+  border-radius: 15px 0px 0 0;
+}
+.progress-container {
+  width: 100%;
+  height: 5%;
+  position: relative;
+}
+.progress-container .remains {
+  background-color: #6c6c6c;
+  width: 100%;
+  height: 100%;
+}
+.progress-container .played {
+  width: 80%;
+  height: 100%;
+  background-color: var(--light-red);
+  z-index: 5;
+  position: absolute;
+  top: 0%;
+  left: 0;
+}
+.progress-container .controlers-container {
+  display: flex;
+  width: 100%;
+  height: 95%;
+  justify-content: space-evenly;
+}
+.music-cover-container img {
+  width: 60%;
+  height: 80%;
+}
+.music-control-box {
+  width: 100%;
+  height: 10%;
+  background-color: #171717;
+  border-radius: 0 0 15px 15px;
+}
+.controlers-container {
+  display: flex;
+  height: 95%;
+}
+.controlers-container > div {
+  width: 33%;
+  height: 100%;
+}
+.controll-icon {
+  font-size: 25px;
+  color: rgb(119, 119, 119);
+}
+
+.disabled {
+  color: #6c6c6c;
+}
+.song-info {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+.song-actions span {
+  margin-right: 15px;
+}
+.song-play-actions {
+  display: flex;
+  justify-content: center;
+}
+.song-play-actions span {
+  font-size: 28px !important;
+}
+.song-play-actions .play-btn {
+  font-size: 38px !important;
+  color: var(--light-red);
+  margin: 0 5px;
+}
+.song-info img {
+  width: 48px;
+  height: 48px;
+}
+.song-info div {
+  display: flex;
+  flex-direction: column;
+  padding-left: 10px;
+  align-items: flex-end;
+}
+.song-info .song-name {
+  color: var(--cream);
+}
+.song-info div .artist-name a {
+  color: var(--gray-light);
+  transition: 0.3s color;
+  width: fit-content;
+  font-size: 14px;
+}
+.song-info div .artist-name a:hover {
+  color: #b4b4b4;
+}
