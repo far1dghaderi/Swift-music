@@ -209,8 +209,9 @@ nav {
 }
 .songs-list-container .song-box img {
   width: 128px;
-  height: 100%;
+  height: 85px;
   border-radius: 0 10px 10px 0;
+  opacity: 0.8;
 }
 .song-box div {
   display: flex;
@@ -294,5 +295,79 @@ footer {
 }
 .artists-container .artist-box .artist-genre {
   color: var(--gray-light);
+}
+/* #endregion */
+
+/* #region artist page */
+
+.artist-header-container {
+  width: 100%;
+  height: 500px;
+  background: url("../../images/artists/Taylor-swift/bg-1.jpg") no-repeat center;
+  background-size: cover;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+.artist-header-container::after {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  height: 100%;
+  width: 100%;
+}
+.artist-details {
+  position: relative;
+  z-index: 5;
+  display: flex;
+  height: 90%;
+}
+
+.artist-details .about {
+  width: 70%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.artist-details .about .name {
+  color: #fff;
+  font-size: 35px;
+}
+.artist-details .about .about-text {
+  color: var(--gray-light);
+  text-align: justify;
+  padding: 50px 30px;
+  font-size: 18px;
+}
+.artist-details .profile {
+  width: 29%;
+  height: 100%;
+}
+.artist-details .profile img {
+  max-width: 100%;
+  opacity: 0.7;
+}
+
+.artist-header-container .info {
+  position: relative;
+  z-index: 5;
+  display: flex;
+  width: 100%;
+  justify-content: space-evenly;
+  height: 10%;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+.artist-header-container .info span {
+  color: #fff;
+  font-weight: normal;
+}
+.artist-header-container .info span > span {
+  color: var(--gray-light);
+  font-weight: bold;
 }
 /* #endregion */
