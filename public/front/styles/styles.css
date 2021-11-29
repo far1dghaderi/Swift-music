@@ -211,17 +211,49 @@ nav {
   font-size: 22px;
 }
 .songs-list-container .song-box {
+  position: relative;
   display: flex;
   width: 30%;
   margin-top: 10px;
   background-color: var(--box-bg);
   border-radius: 10px;
+  height: 85px;
+  overflow: hidden;
 }
 .songs-list-container .song-box img {
   width: 128px;
+  min-width: 128px;
+
   height: 85px;
   border-radius: 0 10px 10px 0;
   opacity: 0.8;
+}
+.songs-list-container .song-box .song-box-play {
+  position: absolute;
+  width: 128px;
+  height: 84%;
+  border-radius: 0 10px 10px 0;
+  top: 0;
+  right: -15px;
+  background-color: rgba(30, 30, 30, 0.9);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 45px;
+  z-index: 5;
+  transition: 0.3s transform;
+  transform: translateY(100%);
+}
+.songs-list-container .song-box:hover .song-box-play {
+  transform: translateY(0);
+}
+.song-box-play a {
+  color: var(--red);
+  transition: 0.3s all;
+}
+.song-box-play a:hover {
+  color: var(--light-red);
+  transform: scale(1.1) rotate(360deg);
 }
 .song-box div {
   display: flex;
@@ -243,6 +275,7 @@ nav {
   color: var(--gray-light);
   transition: 0.3s color;
   width: fit-content;
+  font-size: 14px;
 }
 .song-box div .artist-name a:hover {
   color: #b4b4b4;
@@ -573,7 +606,7 @@ footer {
 /* #region Auth container */
 .auth-body {
   height: 100vh;
-  overflow-y: hidden;
+  overflow: hidden;
 }
 .auth-container {
   top: 30%;
@@ -660,4 +693,41 @@ footer {
 .auth-container form div input:first-child {
   margin-left: 5px;
 }
+.signup-container .other-option {
+  padding: 0 2%;
+}
 /* #endregion */
+
+/* #region Animations */
+.fade-out {
+  animation: 0.5s 1 forwards fade-out;
+}
+.fade-in {
+  animation: 0.5s 1 forwards fade-in;
+}
+@keyframes fade-out {
+  0% {
+    transform: translateX(0%);
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.8;
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(200%);
+  }
+}
+@keyframes fade-in {
+  0% {
+    transform: translateX(-200%);
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.2;
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0%);
+  }
+}
