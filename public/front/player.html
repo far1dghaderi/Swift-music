@@ -44,7 +44,7 @@
               <div class="align-center">متن</div>
             </div>
             <div class="player-queue">
-              <div class="player-queue-song">
+              <div class="player-queue-song" src="alltoowell.mp3">
                 <img
                   src="../images/artists/Shawn-mendes/Monster/Screen-Shot-2020-11-20-at-12.55.02-PM-960x576-1-e1605865518239 (1).png"
                   alt=""
@@ -55,6 +55,14 @@
                     <a href="artist.html">Shawn Mendes - </a>
                     <a href="artist.html">Justin Bieber</a>
                   </span>
+                </div>
+                <div class="song-box-play">
+                  <a href="#"
+                    ><span
+                      id="play-song-btn"
+                      class="bi bi-play-circle-fill"
+                    ></span
+                  ></a>
                 </div>
               </div>
               <div class="player-queue-song">
@@ -68,6 +76,9 @@
                     <a href="artist.html">Shawn Mendes - </a>
                     <a href="artist.html">Justin Bieber</a>
                   </span>
+                </div>
+                <div class="song-box-play">
+                  <a href="#"><span class="bi bi-play-circle-fill"></span></a>
                 </div>
               </div>
               <div class="player-queue-song selected align-center-verticaly">
@@ -80,18 +91,8 @@
                     <a href="artist.html">Taylor Swift</a>
                   </span>
                 </div>
-              </div>
-              <div class="player-queue-song">
-                <img
-                  src="../images/artists/Shawn-mendes/Monster/Screen-Shot-2020-11-20-at-12.55.02-PM-960x576-1-e1605865518239 (1).png"
-                  alt=""
-                />
-                <div>
-                  <span class="song-name"> Monster</span>
-                  <span class="artist-name">
-                    <a href="artist.html">Shawn Mendes - </a>
-                    <a href="artist.html">Justin Bieber</a>
-                  </span>
+                <div class="song-box-play">
+                  <a href="#"><span class="bi bi-play-circle-fill"></span></a>
                 </div>
               </div>
               <div class="player-queue-song">
@@ -106,18 +107,8 @@
                     <a href="artist.html">Justin Bieber</a>
                   </span>
                 </div>
-              </div>
-              <div class="player-queue-song">
-                <img
-                  src="../images/artists/Shawn-mendes/Monster/Screen-Shot-2020-11-20-at-12.55.02-PM-960x576-1-e1605865518239 (1).png"
-                  alt=""
-                />
-                <div>
-                  <span class="song-name"> Monster</span>
-                  <span class="artist-name">
-                    <a href="artist.html">Shawn Mendes - </a>
-                    <a href="artist.html">Justin Bieber</a>
-                  </span>
+                <div class="song-box-play">
+                  <a href="#"><span class="bi bi-play-circle-fill"></span></a>
                 </div>
               </div>
               <div class="player-queue-song">
@@ -131,6 +122,41 @@
                     <a href="artist.html">Shawn Mendes - </a>
                     <a href="artist.html">Justin Bieber</a>
                   </span>
+                </div>
+                <div class="song-box-play">
+                  <a href="#"><span class="bi bi-play-circle-fill"></span></a>
+                </div>
+              </div>
+              <div class="player-queue-song">
+                <img
+                  src="../images/artists/Shawn-mendes/Monster/Screen-Shot-2020-11-20-at-12.55.02-PM-960x576-1-e1605865518239 (1).png"
+                  alt=""
+                />
+                <div>
+                  <span class="song-name"> Monster</span>
+                  <span class="artist-name">
+                    <a href="artist.html">Shawn Mendes - </a>
+                    <a href="artist.html">Justin Bieber</a>
+                  </span>
+                </div>
+                <div class="song-box-play">
+                  <a href="#"><span class="bi bi-play-circle-fill"></span></a>
+                </div>
+              </div>
+              <div class="player-queue-song">
+                <img
+                  src="../images/artists/Shawn-mendes/Monster/Screen-Shot-2020-11-20-at-12.55.02-PM-960x576-1-e1605865518239 (1).png"
+                  alt=""
+                />
+                <div>
+                  <span class="song-name"> Monster</span>
+                  <span class="artist-name">
+                    <a href="artist.html">Shawn Mendes - </a>
+                    <a href="artist.html">Justin Bieber</a>
+                  </span>
+                </div>
+                <div class="song-box-play">
+                  <a href="#"><span class="bi bi-play-circle-fill"></span></a>
                 </div>
               </div>
             </div>
@@ -142,8 +168,7 @@
         </div>
         <div class="music-control-box">
           <div class="progress-container">
-            <div class="remains"></div>
-            <div class="played"></div>
+            <input class="played" type="range" min="0" step="0.01" />
           </div>
           <div class="controlers-container">
             <div class="song-actions align-center-verticaly">
@@ -172,5 +197,6 @@
         </div>
       </section>
     </main>
+    <script src="build/player.js"></script>
   </body>
 </html>

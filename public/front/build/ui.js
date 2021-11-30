@@ -2,6 +2,7 @@
 // Auth page animations
 const loginForm = document.querySelector(".login-container");
 const signupForm = document.querySelector(".signup-container");
+const nav = document.querySelector("nav");
 if (loginForm && signupForm) {
     const showSignupFormBtn = document.querySelector("#show-signup");
     const showLoginFormBtn = document.querySelector("#show-login");
@@ -18,3 +19,20 @@ if (loginForm && signupForm) {
         signupForm.classList.add("hide");
     });
 }
+// #region Show and hide music player
+const showHidePlayer = document.querySelector(".display-player-btn");
+if (showHidePlayer) {
+    showHidePlayer.addEventListener("click", () => {
+        const musicPlayerContainer = document.querySelector(".music-player-container");
+        const playerWindow = document.querySelector(".music-player-container .player");
+        if (showHidePlayer.classList.contains("show")) {
+            showHidePlayer.classList.replace("show", "collapse");
+            playerWindow.style.transform = "translateY(120%)";
+        }
+        else {
+            showHidePlayer.classList.replace("collapse", "show");
+            playerWindow.style.transform = "translateY(0%)";
+        }
+    });
+}
+//#endregion

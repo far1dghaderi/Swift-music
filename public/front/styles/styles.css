@@ -38,6 +38,7 @@
 }
 body {
   background-color: var(--main-color);
+  margin-top: 60px;
 }
 .auth-container input[type="submit"] {
   cursor: pointer;
@@ -57,6 +58,10 @@ nav {
   justify-content: space-between;
   padding: 10px 0 5px 0;
   background: var(--main-color);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 6;
 }
 .logo {
   padding-right: 15px;
@@ -420,15 +425,23 @@ footer {
 .music-player-main {
   margin: 50px 2% 0 2%;
 }
+#control-play-btn {
+  cursor: pointer;
+}
 .music-player-container {
-  width: 80%;
+  position: fixed;
+  width: 100%;
   border-radius: 15px;
-  height: 650px;
+  height: 94.5%;
+  top: 7.5%;
+  left: 0;
+  z-index: 10;
 }
 .music-player-container .player {
   height: fit-content;
   display: flex;
   height: 88%;
+  transition: 0.5s transform;
 }
 .player-side-menu-container {
   display: flex;
@@ -436,12 +449,10 @@ footer {
   background-color: #232323;
   height: 100%;
   width: 35%;
-  border-radius: 0 15px 0 0;
 }
 .player-tabs {
   background-color: #252525;
   width: 100%;
-  border-radius: 0 15px 0 0;
 }
 .player-tabs div {
   padding: 10px 0;
@@ -450,9 +461,7 @@ footer {
   color: var(--gray-light);
   transition: 0.3s all;
 }
-.player-tabs div:first-child {
-  border-radius: 0 15px 0 0;
-}
+
 .player-tabs div:hover {
   background-color: var(--gray);
   color: white !important;
@@ -466,9 +475,37 @@ footer {
 }
 .player-queue-song {
   display: flex;
+  position: relative;
   margin-top: 15px;
   transition: background-color 0.3s;
   padding: 10px 0;
+  overflow: hidden;
+}
+.player-queue-song .song-box-play {
+  position: absolute;
+  width: 64px;
+  height: 84%;
+  top: 0;
+  right: -15px;
+  background-color: rgba(30, 30, 30, 0.9);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 35px;
+  z-index: 5;
+  transition: 0.3s transform;
+  transform: translateY(100%);
+}
+.player-queue-song:hover .song-box-play {
+  transform: translateY(0);
+}
+.player-queue-song .song-box-play a {
+  color: var(--red);
+  transition: 0.3s all;
+}
+.player-queue-song .song-box-play a:hover {
+  color: var(--light-red);
+  transform: scale(1.1) rotate(0deg);
 }
 .player-queue-song:hover {
   background-color: #1e1e1e;
@@ -506,27 +543,23 @@ footer {
   width: 65%;
   height: 100%;
   background-color: #222222;
-  border-radius: 15px 0px 0 0;
 }
 .progress-container {
   width: 100%;
   height: 5%;
   position: relative;
 }
-.progress-container .remains {
-  background-color: #6c6c6c;
+.progressbar {
   width: 100%;
-  height: 100%;
-}
-.progress-container .played {
-  width: 80%;
   height: 100%;
   background-color: var(--light-red);
   z-index: 5;
   position: absolute;
   top: 0%;
+  direction: ltr;
   left: 0;
 }
+
 .progress-container .controlers-container {
   display: flex;
   width: 100%;
@@ -550,6 +583,31 @@ footer {
 .controlers-container > div {
   width: 33%;
   height: 100%;
+}
+.display-player-btn {
+  margin: 0 25px 0 5px;
+  color: var(--gray);
+  font-size: 20px;
+  cursor: pointer;
+  font-weight: bold;
+  border-radius: 100%;
+  transition: 0.3s all;
+  padding: 0 5px;
+}
+.display-player-btn:hover {
+  background-color: #272727;
+}
+.show {
+  transform: rotate(180deg);
+}
+.show:hover {
+  transform: rotate(0deg);
+}
+.collapse {
+  transform: rotate(0deg);
+}
+.collapse:hover {
+  transform: rotate(180deg);
 }
 .controll-icon {
   font-size: 25px;
