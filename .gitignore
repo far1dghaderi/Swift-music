@@ -2,3 +2,5 @@ node_modules
 public/images/*
 public/music/*
 config.env
+package.json
+.jshintrc
