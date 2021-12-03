@@ -31,11 +31,8 @@ const songSchema = new mongoose_1.default.Schema({
         {
             id: {
                 type: mongoose_1.default.Schema.Types.ObjectId,
+                ref: "artists",
                 required: [true, "Each singer field must have an id "],
-            },
-            ref: {
-                type: String,
-                required: [true, "Each singer field must have an ref value"],
             },
             name: {
                 type: String,
@@ -49,11 +46,8 @@ const songSchema = new mongoose_1.default.Schema({
         {
             id: {
                 type: mongoose_1.default.Schema.Types.ObjectId,
+                ref: "albums",
                 required: [true, "Each album field must have an id "],
-            },
-            ref: {
-                type: String,
-                required: [true, "Each album field must have an ref value"],
             },
             name: {
                 type: String,

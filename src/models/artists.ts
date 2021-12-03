@@ -84,11 +84,8 @@ const artistSchema = new mongoose.Schema<ArtistInterface>({
         {
           id: {
             type: mongoose.Schema.Types.ObjectId,
+            ref: "artists",
             required: [true, "Each singer field must have an id "],
-          },
-          ref: {
-            type: String,
-            required: [true, "Each singer field must have an ref value"],
           },
         },
       ],
@@ -96,11 +93,8 @@ const artistSchema = new mongoose.Schema<ArtistInterface>({
         {
           id: {
             type: mongoose.Schema.Types.ObjectId,
+            ref: "albums",
             required: [true, "Each album field must have an id "],
-          },
-          ref: {
-            type: String,
-            required: [true, "Each album field must have an ref value"],
           },
           name: {
             type: String,
@@ -145,11 +139,8 @@ const artistSchema = new mongoose.Schema<ArtistInterface>({
         {
           id: {
             type: mongoose.Schema.Types.ObjectId,
+            ref: "albums",
             required: [true, "Each artist field must have an id "],
-          },
-          ref: {
-            type: String,
-            required: [true, "Each artist field must have an ref value"],
           },
           type: String,
           minlength: [2, "Artist name must have more than 2 characters"],
@@ -161,11 +152,8 @@ const artistSchema = new mongoose.Schema<ArtistInterface>({
         {
           id: {
             type: mongoose.Schema.Types.ObjectId,
+            ref: "songs",
             required: [true, "Each album field must have an id "],
-          },
-          ref: {
-            type: String,
-            required: [true, "Each album field must have an ref value"],
           },
           name: {
             type: String,
@@ -181,6 +169,7 @@ const artistSchema = new mongoose.Schema<ArtistInterface>({
             {
               id: {
                 type: mongoose.Schema.Types.ObjectId,
+                ref: "artists",
                 required: [true, "Each singer field must have an id "],
               },
               ref: {
