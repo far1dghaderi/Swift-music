@@ -17,8 +17,9 @@ const albumSchema = new mongoose_1.default.Schema({
         required: [true, "Each song must a publish date"],
     },
     totalDuration: {
-        type: Number,
-        required: [true, "each song must have a duration"],
+        hours: Number,
+        minutes: Number,
+        seconds: Number,
     },
     artists: [
         {
@@ -88,7 +89,7 @@ const albumSchema = new mongoose_1.default.Schema({
         type: String,
         required: [true, "Each song must have a image for it's cover"],
     },
-    background: String,
+    background: [String],
 });
 const albumModel = mongoose_1.default.model("albums", albumSchema);
 exports.default = albumModel;

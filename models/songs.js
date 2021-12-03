@@ -23,8 +23,9 @@ const songSchema = new mongoose_1.default.Schema({
         required: [true, "Each song must a publish date"],
     },
     duration: {
-        type: Number,
-        required: [true, "each song must have a duration"],
+        hours: Number,
+        minutes: Number,
+        seconds: Number,
     },
     artists: [
         {
@@ -35,6 +36,12 @@ const songSchema = new mongoose_1.default.Schema({
             ref: {
                 type: String,
                 required: [true, "Each singer field must have an ref value"],
+            },
+            name: {
+                type: String,
+                minlength: [2, "Artist name must have more than 2 characters"],
+                maxlength: [45, "Artist name could not have more than 45 characters"],
+                required: [true, "Each artist must have a name"],
             },
         },
     ],

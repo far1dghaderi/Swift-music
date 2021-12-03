@@ -26,6 +26,7 @@ const artistSchema = new mongoose_1.default.Schema({
         minlength: [2, "Artist name must have more than 2 characters"],
         maxlength: [70, "Artist name could not have more than 45 characters"],
         required: [true, "Each artist must have a username"],
+        unique: true,
     },
     nationalty: String,
     birthdate: Date,
@@ -195,6 +196,7 @@ const artistSchema = new mongoose_1.default.Schema({
                 required: [true, "Each song must have a image for it's cover"],
             },
             background: String,
+            folder: String,
         },
     ],
 });

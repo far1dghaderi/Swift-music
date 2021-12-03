@@ -4,7 +4,11 @@ export interface AlbumInterface {
   name: string;
   genre: string[];
   publishDate: Date;
-  totalDuration: number; //in seconds,
+  totalDuration: {
+    hours: number;
+    minutes: number;
+    seconds: number;
+  }; //in seconds,
   artists: [
     {
       id: mongoose.Schema.Types.ObjectId;
@@ -29,7 +33,7 @@ export interface AlbumInterface {
     }
   ];
   image: string;
-  background?: string;
+  background?: string[];
 }
 
 const albumSchema = new mongoose.Schema<AlbumInterface>({
@@ -45,8 +49,9 @@ const albumSchema = new mongoose.Schema<AlbumInterface>({
     required: [true, "Each song must a publish date"],
   },
   totalDuration: {
-    type: Number,
-    required: [true, "each song must have a duration"],
+    hours: Number,
+    minutes: Number,
+    seconds: Number,
   },
   artists: [
     {
@@ -116,7 +121,7 @@ const albumSchema = new mongoose.Schema<AlbumInterface>({
     type: String,
     required: [true, "Each song must have a image for it's cover"],
   },
-  background: String,
+  background: [String],
 });
 
 const albumModel = mongoose.model("albums", albumSchema);
