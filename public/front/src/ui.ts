@@ -45,3 +45,21 @@ if (showHidePlayer) {
   });
 }
 //#endregion
+
+//show player when user clicks on play button
+const showMusicPlayer = () => {
+  const player = document.querySelector(".music-player-container");
+  const controlBox = document.querySelector(".controlers-container");
+  if (player && controlBox) {
+    player.classList.remove("hide");
+    controlBox.classList.remove("hide");
+  }
+};
+
+document.addEventListener("click", (event) => {
+  if (event.target instanceof Element) {
+    if (event.target.classList.contains("play-btn")) {
+      showMusicPlayer();
+    }
+  }
+});
