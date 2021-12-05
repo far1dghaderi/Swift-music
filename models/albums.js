@@ -28,10 +28,12 @@ const albumSchema = new mongoose_1.default.Schema({
                 ref: "artists",
                 required: [true, "Each artist field must have an id "],
             },
-            type: String,
-            minlength: [2, "Artist name must have more than 2 characters"],
-            maxlength: [45, "Artist name could not have more than 45 characters"],
-            required: [true, "Each artist must have a name"],
+            name: {
+                type: String,
+                minlength: [2, "Artist name must have more than 2 characters"],
+                maxlength: [45, "Artist name could not have more than 45 characters"],
+                required: [true, "Each artist must have a name"],
+            },
         },
     ],
     songs: [
@@ -67,6 +69,7 @@ const albumSchema = new mongoose_1.default.Schema({
                         ],
                         required: [true, "Each artist must have a name"],
                     },
+                    folder: String,
                 },
             ],
             lyrics: String,
@@ -80,7 +83,7 @@ const albumSchema = new mongoose_1.default.Schema({
         type: String,
         required: [true, "Each song must have a image for it's cover"],
     },
-    background: [String],
+    background: [{ type: String }],
 });
 const albumModel = mongoose_1.default.model("albums", albumSchema);
 exports.default = albumModel;

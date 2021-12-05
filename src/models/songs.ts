@@ -60,6 +60,7 @@ const songSchema = new mongoose.Schema<SongInterface>({
         maxlength: [45, "Artist name could not have more than 45 characters"],
         required: [true, "Each artist must have a name"],
       },
+      folder: String,
     },
   ],
   album: [

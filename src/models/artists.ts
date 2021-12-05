@@ -198,7 +198,7 @@ const artistSchema = new mongoose.Schema<ArtistInterface>({
         type: String,
         required: [true, "Each song must have a image for it's cover"],
       },
-      background: String,
+      background: [{ type: String }],
       folder: String,
     },
   ],
